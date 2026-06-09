@@ -1,6 +1,6 @@
 .env
 .venv/
-pipeline/service_account.json
+pipeline/*.json
 pipeline/*.db
 __pycache__/
 *.pyc
