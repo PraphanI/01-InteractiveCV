@@ -5,10 +5,10 @@ Interactive HTML CV. Data flows from Google Sheets through a Python/DuckDB
 pipeline to a static JSON file, which a self-contained HTML page reads at
 runtime. Hosted for free on GitHub Pages.
 
-The Google Sheets data is a normalised relational model with entity tables
-(Person, Organization, Location, Work, Education, Skills, Task) and junction
-tables (Work-Location, Edu-Location, Task-Skills). Agent 2 must use DuckDB
-SQL JOINs to assemble cv_data.json — not treat sheets as flat exports.
+The data schema, JOIN logic, and cv_data.json output shape are all defined
+in shared/requirements_spec.html — the single source of truth produced by
+Agent 1. Agent 2 reads the spec and builds from it. Agent 3 reads the spec
+and tests against it. Neither agent hardcodes schema assumptions.
 
 ### Folder ownership
 - agents/    system prompts — reference only, do not modify during a run
