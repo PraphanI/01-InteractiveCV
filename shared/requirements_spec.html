@@ -40,8 +40,19 @@ tr:nth-child(even) td{background:#fafafa;}
 <div class="sec">
 <div class="sec-title"><span class="sec-num">01</span> Overview & Architecture</div>
 <p>A data-driven interactive HTML CV for Praphan Iamsam-ang (Customer Data Analyst). The pipeline reads from Google Sheets, transforms via DuckDB/Python, and outputs a single self-contained <code>docs/index.html</code> deployed to GitHub Pages.</p>
-<div class="sub">Live URL</div>
+<div class="sub">Live URL — Canonical (use everywhere)</div>
 <p><strong>https://praphani.github.io/01-InteractiveCV/</strong></p>
+<div class="warn"><strong>All URL references must use this exact canonical URL — no exceptions:</strong>
+<ul style="margin-top:6px;">
+  <li><code>cv_data.json → person.github</code></li>
+  <li><code>cv_data.json → side_projects[0].url</code> (Interactive CV project)</li>
+  <li><code>cv_data.json → qr_b64</code> QR code encodes this URL</li>
+  <li>PDF <code>.p-teaser-url</code></li>
+  <li>Sidebar GitHub link</li>
+  <li>Side project "View project" link for the Interactive CV project</li>
+</ul>
+Do NOT mix with the old slug <code>https://praphani.github.io/interactive-CV</code>.
+</div>
 <div class="sub">Pipeline</div>
 <pre><code>Google Sheets → build.py (Python + DuckDB) → docs/index.html → GitHub Pages
                      ↑
@@ -218,6 +229,9 @@ jobs:
     }
   ],
   "qr_b64": "iVBORw0K..."    // base64 PNG of QR code for https://praphani.github.io/01-InteractiveCV/
+  // build.py MUST generate this field and write it into cv_data.json
+  // index.html MUST read it from CV_DATA.qr_b64 — do NOT hardcode base64 in HTML
+  // Hardcoding bypasses the pipeline and breaks when QR needs updating
 }</code></pre>
 
 <div class="sub">Key Transformation Rules</div>
@@ -231,6 +245,7 @@ jobs:
 <li>Radar scores: sum task counts for all skills in each category where Radar Chart = Y; merge "AI / ML" into "AI / ML / Coding"</li>
 <li>Treemap top 5: technical categories only (excludes Team/Project Management), sorted by task count descending</li>
 <li>Location priority: Bangkok first, then others</li>
+<li><strong>Task-Skills deduplication:</strong> when building task.skills array, deduplicate by S_ID — a skill must appear at most once per task even if Task-Skills sheet has duplicate rows for the same T_ID + S_ID combination</li>
 <li>Total experience = sum of individual role tenures (NOT career date span)</li>
 <li>Reloc pill hidden if <code>person.country === "Australia"</code></li>
 <li>QR code URL: <strong>https://praphani.github.io/01-InteractiveCV/</strong></li>
@@ -679,6 +694,12 @@ renderAll(CV_DATA);
   .pdf-page{display:block !important;}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 }</code></pre>
+
+<div class="sub">PDF page breaks</div>
+<p>To prevent html2pdf.js from splitting cards across pages, these CSS rules must be applied to all PDF block elements:</p>
+<pre><code>.p-ei, .p-ei:last-child, .p-edui, .p-sec { break-inside:avoid; page-break-inside:avoid; }
+.p-tlist li { break-inside:avoid; page-break-inside:avoid; }
+.p-tname { break-after:avoid; page-break-after:avoid; }</code></pre>
 
 <div class="sub">PDF Layout (top to bottom)</div>
 <ol>
@@ -1309,6 +1330,9 @@ const RADAR_MAX = CV_DATA.radar_max;
 <tr><td>16</td><td>Outcome box is Mint bg</td><td>Outcome panel has green background</td></tr>
 <tr><td>17</td><td>No border-left on single-role .card</td><td>One NZ card has no left border</td></tr>
 <tr><td>18</td><td>QR code links to correct URL</td><td>Scan QR → https://praphani.github.io/01-InteractiveCV/</td></tr>
+<tr><td>18b</td><td>qr_b64 sourced from cv_data.json</td><td>CV_DATA.qr_b64 used in HTML — not hardcoded base64</td></tr>
+<tr><td>18c</td><td>All URL references use canonical URL</td><td>person.github, SP001 URL, sidebar link, PDF teaser all use /01-InteractiveCV/</td></tr>
+<tr><td>18d</td><td>No duplicate skill chips per task</td><td>Each skill appears at most once in task detail panel</td></tr>
 <tr><td>19</td><td>First 3 tasks visible, rest hidden</td><td>Each role shows max 3 tasks then "Show N more tasks" button</td></tr>
 <tr><td>19b</td><td>"Show less" at end of expanded list</td><td>Expand tasks → "Show less" appears below last task</td></tr>
 <tr><td>19c</td><td>"View project" full label with icon</td><td>Side project buttons show "View project" not just "View"</td></tr>

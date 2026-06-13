@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QA Report — Interactive CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Geist Mono",monospace;background:#F2F3F6;color:#181D25;padding:2rem;}
+.page{max-width:900px;margin:0 auto;}
+h1{font-size:22px;font-weight:700;color:#181D25;margin-bottom:4px;}
+.subtitle{font-size:12px;color:#606E80;margin-bottom:2rem;}
+.sec{background:#fff;border:0.5px solid rgba(24,29,37,0.11);border-radius:14px;padding:1.5rem 2rem;margin-bottom:1.5rem;}
+.sec-title{font-size:14px;font-weight:700;color:#181D25;margin-bottom:1.2rem;display:flex;align-items:center;gap:8px;}
+.badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;}
+.badge-pass{background:#f0fff4;color:#27ae60;border:1px solid #27ae60;}
+.badge-warn{background:#fff8e6;color:#c47a00;border:1px solid #f0a500;}
+.badge-fail{background:#fff0f0;color:#c0392b;border:1px solid #c0392b;}
+.badge-info{background:#EEF2FF;color:#3765F6;border:1px solid #3765F6;}
+table{width:100%;border-collapse:collapse;font-size:11px;}
+th{background:#EEF2FF;color:#3765F6;text-align:left;padding:7px 10px;border:0.5px solid rgba(55,101,246,0.2);font-weight:600;}
+td{padding:7px 10px;border:0.5px solid rgba(24,29,37,0.08);vertical-align:top;line-height:1.5;}
+tr:nth-child(even) td{background:#fafafa;}
+.status{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap;}
+.s-pass{background:#f0fff4;color:#27ae60;}
+.s-fail{background:#fff0f0;color:#c0392b;}
+.s-warn{background:#fff8e6;color:#c47a00;}
+.s-note{background:#EEF2FF;color:#3765F6;}
+.summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem;}
+.stat{background:#EEF2FF;border-radius:10px;padding:12px 14px;}
+.stat-val{font-size:28px;font-weight:700;color:#181D25;line-height:1;}
+.stat-lbl{font-size:10px;color:#606E80;margin-top:4px;line-height:1.4;}
+.issue-card{border-radius:10px;padding:1rem 1.25rem;margin-bottom:10px;border-left:3px solid;}
+.issue-warn{background:#fff8e6;border-color:#f0a500;}
+.issue-fail{background:#fff0f0;border-color:#c0392b;}
+.issue-title{font-size:12px;font-weight:700;margin-bottom:6px;}
+.issue-warn .issue-title{color:#c47a00;}
+.issue-fail .issue-title{color:#c0392b;}
+.issue-body{font-size:11px;color:#181D25;line-height:1.7;}
+code{font-family:"Geist Mono",monospace;font-size:10.5px;background:#EEF2FF;color:#3765F6;padding:1px 5px;border-radius:3px;}
+.file-pill{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;background:#181D25;color:#70FC8E;}
+.footer{text-align:right;margin-top:1.5rem;font-size:10px;color:#606E80;}
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>QA Report — Interactive CV</h1>
+<div class="subtitle">praphani.github.io/01-InteractiveCV &nbsp;·&nbsp; Checked 14 June 2026 &nbsp;·&nbsp; Files: <span class="file-pill">index.html</span> &nbsp;<span class="file-pill">cv_data.json</span> &nbsp;<span class="file-pill">requirements_spec.html</span></div>
+
+<div class="summary-grid">
+  <div class="stat"><div class="stat-val">20</div><div class="stat-lbl">Spec checks passing</div></div>
+  <div class="stat"><div class="stat-val" style="color:#c47a00;">2</div><div class="stat-lbl">Warnings / notable items</div></div>
+  <div class="stat"><div class="stat-val" style="color:#c0392b;">0</div><div class="stat-lbl">Hard failures</div></div>
+  <div class="stat"><div class="stat-val" style="color:#c47a00;">2</div><div class="stat-lbl">Data quality issues</div></div>
+</div>
+
+<!-- Passing checks -->
+<div class="sec">
+  <div class="sec-title"><span class="badge badge-pass">✓ PASS</span> Spec Section 11 checklist — index.html (20 / 22)</div>
+  <table>
+    <tr><th>#</th><th>Check</th><th>Detail</th><th>Status</th></tr>
+    <tr><td>1</td><td>No <code>fetch()</code> — data embedded inline</td><td>CV_DATA injected as inline JS object. Page works as local file://</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>2</td><td>Geist Mono only — no Inter font</td><td>"Inter" substring found is content text ("Interactive…"), not a font reference. No <code>font-family: Inter</code> in CSS.</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>3</td><td>No <code>.section</code> class added</td><td>Zero matches for <code>.section</code> in HTML/CSS</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>4</td><td><code>sec-ttl</code> is <code>&lt;span&gt;</code></td><td>All 5 occurrences use <code>&lt;span class="sec-ttl"&gt;</code></td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>5</td><td><code>clp-btn</code> is <code>&lt;span&gt;</code></td><td>Both expand/collapse buttons use <code>&lt;span class="clp-btn"&gt;</code></td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>6</td><td>Section IDs match exactly</td><td>All 5 IDs present exactly once: <code>summary</code>, <code>skills-overview</code>, <code>experience</code>, <code>side-projects</code>, <code>education</code></td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>7</td><td>Left pane fully populated</td><td>Name, role, motto, location, phone, email, LinkedIn, GitHub, citizenship, stats, key skills all present in sidebar</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>8</td><td>Stats have no "+" suffix</td><td>Sidebar shows plain integers: 18, 4, 16, 8</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>9</td><td>Reloc pill conditional</td><td><code>person.relocation</code> is empty string → no pill rendered. <code>person.country</code> is "New Zealand" (not AU) so logic is correct.</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>10</td><td>Skills Overview card present</td><td>Radar chart + card divider + treemap all present in DOM</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>11</td><td><code>task-chip-row</code> inside <code>.dp</code></td><td>Skill chips are inside <code>.dp-inner</code> on all tasks</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>12</td><td><code>.dp</code> starts closed</td><td>CSS confirms <code>max-height:0; opacity:0</code> on <code>.dp</code> and <code>.proj-dp</code></td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>13</td><td>Expand all default label</td><td>Both sections show <code>▸ Expand all</code> on load</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>14</td><td>Education majors populated</td><td>Sydney: Information Systems, Econometrics, Geospatial. Mahidol: Information Systems. Matches data feed.</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>15</td><td>Cert skill is name not ID</td><td>Google cert shows "Google Gemini"; Ideo cert shows "Customer Journey Mapping"</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>16</td><td>Outcome box is Mint bg</td><td><code>.dpc.oc</code> present on all task outcome panels</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>17</td><td>No border-left on single-role <code>.card</code></td><td>One NZ, nib, King Power, Deloitte cards have no left border override</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>19</td><td>First 3 tasks visible, rest hidden</td><td><code>.extra-tasks</code> wrapper used; hidden via CSS max-height:0</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>19b</td><td>"Show less" at end of expanded list</td><td><code>.show-more-row</code> placed after <code>.extra-tasks</code> div</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>19c</td><td>"View project" full label with icon</td><td>All 5 project cards have SVG icon + "View project" label on the <code>&lt;a&gt;</code></td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>20</td><td>PDF uses <code>.p-*</code> classes only</td><td>No <code>pdf-*</code> class names found in PDF section HTML</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>21</td><td>PDF download — no print dialog</td><td><code>html2pdf.js</code> CDN loaded; <code>showPDF()</code> calls <code>html2pdf().set(opt).from(el).save()</code> directly</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+    <tr><td>22</td><td>Phone2 in PDF if populated</td><td><code>person.phone2</code> is empty string → not rendered in PDF header. Correct conditional behaviour.</td><td><span class="status s-pass">✓ Pass</span></td></tr>
+  </table>
+</div>
+
+<!-- Warnings -->
+<div class="sec">
+  <div class="sec-title"><span class="badge badge-warn">⚠ Warnings</span> Items needing attention</div>
+
+  <div class="issue-card issue-warn">
+    <div class="issue-title">⚠ URL inconsistency — GitHub Pages slug</div>
+    <div class="issue-body">
+      The spec and PDF teaser both reference the canonical URL <code>https://praphani.github.io/01-InteractiveCV/</code>, but several locations use a different slug:<br><br>
+      &nbsp;• <code>cv_data.json → person.github</code>: <code>https://praphani.github.io/interactive-CV</code><br>
+      &nbsp;• <code>cv_data.json → side_projects[0].url</code>: <code>https://praphani.github.io/interactive-CV</code><br>
+      &nbsp;• <code>index.html</code> sidebar GitHub link: <code>https://praphani.github.io/interactive-CV</code><br>
+      &nbsp;• <code>index.html</code> side project "View project" link (SP001): <code>https://praphani.github.io/interactive-CV</code><br><br>
+      The PDF <code>.p-teaser-url</code> correctly shows <code>https://praphani.github.io/01-InteractiveCV/</code>. The embedded QR code also appears to encode the correct canonical URL.<br><br>
+      <strong>Recommendation:</strong> Confirm which URL is live on GitHub Pages and align all references accordingly (cv_data.json, index.html sidebar, SP001 project link).
+    </div>
+  </div>
+
+  <div class="issue-card issue-warn">
+    <div class="issue-title">⚠ cv_data.json missing required <code>qr_b64</code> field</div>
+    <div class="issue-body">
+      The spec (Section 03) defines <code>qr_b64</code> as a required top-level field in <code>cv_data.json</code>. The field is absent from the uploaded <code>cv_data.json</code>.<br><br>
+      The QR code still renders in <code>index.html</code> because the base64 PNG is hardcoded directly into the HTML rather than sourced from the JSON. This means the build pipeline is not generating or embedding the QR via <code>cv_data.json</code> as the spec intends.<br><br>
+      <strong>Recommendation:</strong> Ensure <code>build.py</code> generates the <code>qr_b64</code> field and outputs it into <code>cv_data.json</code>. The HTML should then read <code>CV_DATA.qr_b64</code> rather than using a hardcoded value.
+    </div>
+  </div>
+</div>
+
+<!-- Data quality -->
+<div class="sec">
+  <div class="sec-title"><span class="badge badge-warn">⚠ Data</span> Data quality issues — cv_data.json</div>
+
+  <div class="issue-card issue-warn">
+    <div class="issue-title">⚠ Duplicate skill entry — T002 "Whitespace opportunities analysis"</div>
+    <div class="issue-body">
+      <code>DAX</code> appears twice in <code>companies[0].roles[0].tasks[1].skills</code>. This causes a duplicate "DAX" chip to render in the task detail panel in <code>index.html</code>.<br><br>
+      <strong>Source:</strong> Google Sheets → Task-Skills table has two rows linking T002 to the DAX skill.<br>
+      <strong>Recommendation:</strong> Remove the duplicate row in the source sheet and rebuild.
+    </div>
+  </div>
+
+  <div class="issue-card issue-warn">
+    <div class="issue-title">⚠ Duplicate skill entry — T009 "Sentiment analysis"</div>
+    <div class="issue-body">
+      <code>Python</code> appears twice in <code>companies[0].roles[0].tasks[8].skills</code>. This causes a duplicate "Python" chip to render in the task detail panel in <code>index.html</code>.<br><br>
+      <strong>Source:</strong> Google Sheets → Task-Skills table has two rows linking T009 to the Python skill.<br>
+      <strong>Recommendation:</strong> Remove the duplicate row in the source sheet and rebuild.
+    </div>
+  </div>
+</div>
+
+<div class="footer">Generated 14 June 2026 &nbsp;·&nbsp; Interactive CV QA check</div>
+
+</div>
+</body>
+</html>

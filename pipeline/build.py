@@ -207,7 +207,9 @@ def build_cv_data(sheets):
         tid = ts.get("T_ID", "")
         sid = ts.get("S_ID", "")
         if tid and sid:
-            task_skills_map.setdefault(tid, []).append(sid)
+            seen = task_skills_map.setdefault(tid, [])
+            if sid not in seen:
+                seen.append(sid)
 
     # ── Tasks ─────────────────────────────────────────────────────────────────
     task_rows = sheets.get("Task", [])
@@ -823,6 +825,9 @@ CSS = r"""*{box-sizing:border-box;margin:0;padding:0;}
 .p-foot{margin-top:20px;padding-top:10px;border-top:0.5px solid rgba(24,29,37,0.1);display:flex;justify-content:space-between;}
 .p-fn{font-family:var(--mono);font-size:9px;color:var(--mist);}
 .p-fd{font-size:9px;color:rgba(24,29,37,0.25);}
+.p-ei,.p-ei:last-child,.p-edui,.p-sec{break-inside:avoid;page-break-inside:avoid;}
+.p-tlist li{break-inside:avoid;page-break-inside:avoid;}
+.p-tname{break-after:avoid;page-break-after:avoid;}
 .sb-motto{font-size:11px;color:var(--cm);line-height:1.6;font-style:italic;margin-top:12px;margin-bottom:25px;opacity:0.85;}
 .sb-motto-quote{color:var(--mint);font-style:normal;font-weight:700;}"""
 
@@ -1174,7 +1179,7 @@ def build_education_html(d):
     return "".join(cards)
 
 
-def build_pdf_html(d, qr_b64):
+def build_pdf_html(d):
     p = d["person"]
     s = d["stats"]
 
@@ -1244,7 +1249,7 @@ def build_pdf_html(d, qr_b64):
         f'<span class="p-teaser-url">{QR_URL}</span>'
         f'</div>'
         f'<div class="p-qr2">'
-        f'<img src="data:image/png;base64,{qr_b64}" alt="QR">'
+        f'<img id="pdf-qr2-img" src="" alt="QR">'
         f'<div class="p-qr2-lbl">Scan to explore side projects</div>'
         f'</div>'
         f'</div>'
@@ -1304,7 +1309,7 @@ def build_pdf_html(d, qr_b64):
         f'<div class="p-wr-row"><span class="p-wr-lbl">Eligible to work in</span><span class="p-wr-pill">Australia</span><span class="p-wr-pill">New Zealand</span><span class="p-wr-pill">Thailand</span><span class="p-wr-pill">SE Asia</span></div>'
         f'</div>'
         f'<div class="p-qr">'
-        f'<img src="data:image/png;base64,{qr_b64}" alt="QR">'
+        f'<img id="pdf-qr-img" src="" alt="QR">'
         f'<div class="p-qr-lbl">View interactive CV</div>'
         f'</div>'
         f'</div>'
@@ -1333,7 +1338,7 @@ def build_pdf_html(d, qr_b64):
     )
 
 
-def generate_html(d, qr_b64):
+def generate_html(d):
     p = d["person"]
     name = esc(p["name"])
 
@@ -1395,13 +1400,14 @@ def generate_html(d, qr_b64):
     exp_html = build_experience_html(d)
     proj_html = build_projects_html(d)
     edu_html = build_education_html(d)
-    pdf_html = build_pdf_html(d, qr_b64)
+    pdf_html = build_pdf_html(d)
 
     # Inline data as JS const — no fetch()
     cv_data_json = json.dumps(d, ensure_ascii=False, indent=None)
 
     js = f"""// ── DATA ─────────────────────────────────────────────────
 const CV_DATA = {cv_data_json};
+(function(){{var q=CV_DATA.qr_b64;if(q){{['pdf-qr-img','pdf-qr2-img'].forEach(function(id){{var el=document.getElementById(id);if(el)el.src='data:image/png;base64,'+q;}});}}}})();
 
 // ── TREEMAP ──────────────────────────────────────────────
 const tmSkills = CV_DATA.treemap_top5;
@@ -1622,7 +1628,7 @@ def main():
     cv_data["qr_b64"] = qr_b64
 
     print("Step 5/6  Generating HTML...")
-    html = generate_html(cv_data, qr_b64)
+    html = generate_html(cv_data)
 
     print("Step 6/6  Writing output files...")
 
@@ -1638,9 +1644,7 @@ def main():
     index_path.write_text(html, encoding="utf-8")
     print(f"  Wrote docs/index.html ({len(html):,} bytes)")
 
-    # Write cv_data.json (without qr_b64 to keep it compact)
-    cv_data_for_json = {k: v for k, v in cv_data.items() if k != "qr_b64"}
-    json_str = json.dumps(cv_data_for_json, ensure_ascii=False, indent=2)
+    json_str = json.dumps(cv_data, ensure_ascii=False, indent=2)
     (SHARED_DIR / "cv_data.json").write_text(json_str, encoding="utf-8")
     (DOCS_DIR / "cv_data.json").write_text(json_str, encoding="utf-8")
     print(f"  Wrote shared/cv_data.json and docs/cv_data.json ({len(json_str):,} bytes)")

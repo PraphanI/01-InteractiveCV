@@ -76,14 +76,14 @@
         "Data &",
         "Analytics"
       ],
-      "score": 41
+      "score": 40
     },
     {
       "label": [
         "Visuali-",
         "sation"
       ],
-      "score": 23
+      "score": 22
     },
     {
       "label": [
@@ -112,7 +112,7 @@
       "score": 30
     }
   ],
-  "radar_max": 41,
+  "radar_max": 40,
   "treemap_top5": [
     {
       "name": "SQL",
@@ -132,7 +132,7 @@
     },
     {
       "name": "DAX",
-      "tasks": 6
+      "tasks": 5
     }
   ],
   "companies": [
@@ -311,35 +311,31 @@
               "outcome": "Power BI Dashboard that provides insights on market condition and opportunities",
               "skills": [
                 {
-                  "name": "ETL/EDW",
-                  "category": "Data & Analytics"
-                },
-                {
                   "name": "SQL",
                   "category": "Data & Analytics"
-                },
-                {
-                  "name": "DAX",
-                  "category": "Visualisation"
-                },
-                {
-                  "name": "Snowflake Cortex",
-                  "category": "AI / ML / Coding"
                 },
                 {
                   "name": "Snowflake",
                   "category": "Data & Analytics"
                 },
                 {
-                  "name": "DAX",
-                  "category": "Visualisation"
+                  "name": "ETL/EDW",
+                  "category": "Data & Analytics"
                 },
                 {
                   "name": "Power BI",
                   "category": "Visualisation"
                 },
                 {
+                  "name": "DAX",
+                  "category": "Visualisation"
+                },
+                {
                   "name": "Claude Code",
+                  "category": "AI / ML / Coding"
+                },
+                {
+                  "name": "Snowflake Cortex",
                   "category": "AI / ML / Coding"
                 },
                 {
@@ -623,20 +619,16 @@
                   "category": "Data & Analytics"
                 },
                 {
-                  "name": "NLP / Sentiment Analysis",
-                  "category": "AI / ML / Coding"
-                },
-                {
-                  "name": "Python",
-                  "category": "Data & Analytics"
-                },
-                {
                   "name": "Power BI",
                   "category": "Visualisation"
                 },
                 {
                   "name": "DAX",
                   "category": "Visualisation"
+                },
+                {
+                  "name": "NLP / Sentiment Analysis",
+                  "category": "AI / ML / Coding"
                 },
                 {
                   "name": "Stakeholder Management",
@@ -1354,5 +1346,6 @@
         "Blender"
       ]
     }
-  ]
+  ],
+  "qr_b64": "iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAIAAADdBSngAAAE8klEQVR4nO3dMZLjNhRF0W6XN6FkQu9/PQ6dcBmaBWgCmgWAl+hz4qHIHr0C6wsfwPf7/f6Cnr/ufgD4M9EkSjSJEk2iRJMo0SRKNIkSTaJEkyjRJEo0ifr7zD96/frn6z7Hf/9euOrzmT8/58zf1b/768S9zly10pknNGoSJZpEiSZRokmUaPLkCn1U3XrGtcrx2lVnquZ5lezK2v84ca/ad2rUJEo0iRJNokSTKNFkrwp9Xo086l6j5pGv1b9nKv1rf/sxrY6+9zv9ZNQkSjSJEk2iRJMo0WT3Cv1e13rIR33OE/vM+4yaRIkmUaJJlGgSJZpEbVKh93vI773qiYyaRIkmUaJJlGgSJZrsXqGv7L4+41oH+7w59JWV9THou7j3OzVqEiWaRIkmUaJJlGiyV4X+xFnaeTuqzeuEPwatgn/izLtRkyjRJEo0iRJNokSTqO/3+/31NCvnmuedyNbfq+1eRk2iRJMo0SRKNIkSTZ5coY863fuaUeu1751ZHlU1vxbugHeNvdzZnBc6UaJJlGgSJZr8vDn0UVXzyj3W5plX6b+m/fJwra4f9YRGTaJEkyjRJEo0iRJNonLnoa+sZM9c9WnlyeavhRVx7eR3oyZRokmUaBIlmkSJJnvNodd6pOetFl+5Dn3lrxzHtA5/Xe5szgudKNEkSjSJEk1273KfV13W9j3b4zz0Y1D3wrxv0KhJlGgSJZpEiSZRosnuc+ijZqhXrkPvdwIcsWdeuW+eUZMo0SRKNIkSTaJEk6il69Brq7yvqfWHH4Oq+HndC+bQ2YoXOlGiSZRoEiWaPLlCv3d99L0nkq+cr5+3L9xr4f+hdehszgudKNEkSjSJEk32mkO/d3eylWuxa6eov6b1GMyb93faGlvxQidKNIkSTaJEk6jcTnHX7lVbQ33vvY6Fu8BdYx06D+aFTpRoEiWaRIkmT67Q+2eZPXHP8yfum3cs7J83ahIlmkSJJlGiSZRosvsceu0k8Xsr61GffE1tT3hd7mzFC50o0SRKNIkSTX5ehX7NvHnkeZ7YdX/c2mOgy50H80InSjSJEk2iRJO9utzv3fPt3n3q+vvP73GivVGTKNEkSjSJEk2iRJPdK/R5te3KDu15Vv6mMcq8Ne9nGDWJEk2iRJMo0SRKNNnrtLUzVlZz8zrhV3YCXDv97Yxar8IZRk2iRJMo0SRKNIkSTX5ehT5qFfOo2eeVq9fn/fJwxqi6/t7VDUZNokSTKNEkSjSJEk2eXKGfqadGVbvz5tA9z/816nePa9+FUZMo0SRKNIkSTaJEkydX6Peu+z7TDX7mqjNWdnqPqmRfC+fHV36yUZMo0SRKNIkSTaJEk7263Ff2h1/7N/Pq31E1+8p6/NO8VfmjGDWJEk2iRJMo0SRKNNl9Hfq8Hcyufc7KqnnlieTHpavmVdbz/gqjJlGiSZRoEiWaRIkmP2+nuCd64m7qx6U94Vc+zzVGTaJEkyjRJEo0iRJNojap0EfNEc87TWzlOWWv2EoB69DZihc6UaJJlGgSJZrsXqHPW5k+6l5nZsOv1aQrzzo/Fu6Zf+8OgUZNokSTKNEkSjSJEk32qtDvrd3mnfB1rWd7VO/3vVXza1C/ur3c2ZwXOlGiSZRoEiWaRH2/3++7nwH+wKhJlGgSJZpEiSZRokmUaBIlmkSJJlGiSZRoEiWafDX9BhuZ+UKMrr6VAAAAAElFTkSuQmCC"
 }
