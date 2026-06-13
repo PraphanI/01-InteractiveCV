@@ -273,6 +273,15 @@ renderAll(CV_DATA);
   &lt;script&gt;{ALL JS — see Section 09}&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
+<div class="sub">Sidebar full-height background</div>
+<p>The sidebar uses <code>position:sticky; height:100dvh</code> — its Cobalt background only covers the viewport height. To extend Cobalt down the full page height, the <code>.shell</code> grid container uses a CSS gradient:</p>
+<pre><code>.shell {
+  background: linear-gradient(to right, var(--cobalt) 300px, var(--bg) 300px);
+  /* Left 300px = Cobalt for full page height */
+  /* Right side = Ghost Grey */
+}
+/* Do NOT use background:var(--bg) on .shell — this causes Cobalt to stop at viewport height when scrolling */</code></pre>
+
 <div class="sub">Section IDs — exact values</div>
 <pre><code>&lt;div id="summary"&gt;
 &lt;div id="skills-overview"&gt;
@@ -300,7 +309,8 @@ renderAll(CV_DATA);
   --mint:#70FC8E;--border:rgba(24,29,37,0.07);--bm:rgba(24,29,37,0.11);
   --mono:"Geist Mono",monospace;
 }
-.shell{background:var(--bg);display:grid;grid-template-columns:300px 1fr;min-height:100vh;font-family:var(--mono);}
+.shell{background:linear-gradient(to right,var(--cobalt) 300px,var(--bg) 300px);display:grid;grid-template-columns:300px 1fr;min-height:100vh;font-family:var(--mono);}
+/* background gradient extends Cobalt colour full page height — prevents sidebar bg stopping at viewport height */
 .sb{background:var(--cobalt);padding:1.5rem 1.25rem;display:flex;flex-direction:column;gap:1.2rem;position:sticky;top:0;height:100dvh;overflow-y:auto;scrollbar-width:none;}
 .sb::-webkit-scrollbar{display:none;}
 .sb svg{flex-shrink:0;}
@@ -725,6 +735,16 @@ buf = BytesIO()
 img.save(buf, format='PNG')
 qr_b64 = base64.b64encode(buf.getvalue()).decode()</code></pre>
 
+<div class="sub">PDF Header — contacts row</div>
+<p>The PDF header contact row shows phone, phone2 (if populated), and email inline. <strong>If <code>person.phone2</code> is populated, it must appear as a second <code>.p-ci</code> span after phone.</strong></p>
+<pre><code>&lt;div style="margin-bottom:4px;"&gt;
+  &lt;span class="p-ci"&gt;{{person.location}}&lt;/span&gt;
+  &lt;span class="p-ci"&gt;{{person.phone}}&lt;/span&gt;
+  {{person.phone2 ? `&lt;span class="p-ci"&gt;${{person.phone2}}&lt;/span&gt;` : ''}}
+  &lt;span class="p-ci"&gt;{{person.email}}&lt;/span&gt;
+&lt;/div&gt;
+// phone2 only rendered if non-empty string</code></pre>
+
 <div class="sub">PDF Citizenship badges</div>
 <p>PDF uses plain text badges with Obsidian bg/white text (not Mint bg like web version):</p>
 <pre><code>&lt;span class="p-cit-badge"&gt;NZ Citizen&lt;/span&gt;
@@ -1074,6 +1094,28 @@ function showPDF(){
   document.querySelector('.shell').style.display='';
   document.getElementById('pdf-page').style.display='none';
 }</code></pre>
+<div class="sub">html2pdf.js — CDN dependency</div>
+<p>Add this script tag to &lt;head&gt; before the closing &lt;/head&gt; tag:</p>
+<pre><code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+<p>Replace the <code>showPDF()</code> function from the JS verbatim block above with this version:</p>
+<pre><code>function showPDF() {{
+  const el = document.getElementById('pdf-page');
+  el.style.display = 'block';
+  const opt = {{
+    margin: 0,
+    filename: 'CV_PraphanIamsam-ang.pdf',
+    image: {{ type: 'jpeg', quality: 0.98 }},
+    html2canvas: {{ scale: 2, useCORS: true, letterRendering: true }},
+    jsPDF: {{ unit: 'mm', format: 'a4', orientation: 'portrait' }}
+  }};
+  document.fonts.ready.then(() =&gt; {{
+    html2pdf().set(opt).from(el).save().then(() =&gt; {{
+      el.style.display = 'none';
+    }});
+  }});
+}}
+// Clicking "Download CV" saves CV_PraphanIamsam-ang.pdf directly — no print dialog</code></pre>
+
 <div class="sub">Render Functions (build.py generates these calls)</div>
 <p>After embedding CV_DATA, the script must call these in order:</p>
 <pre><code>// Charts — data from CV_DATA
@@ -1271,7 +1313,9 @@ const RADAR_MAX = CV_DATA.radar_max;
 <tr><td>19b</td><td>"Show less" at end of expanded list</td><td>Expand tasks → "Show less" appears below last task</td></tr>
 <tr><td>19c</td><td>"View project" full label with icon</td><td>Side project buttons show "View project" not just "View"</td></tr>
 <tr><td>19d</td><td>No blank gap between cards</td><td>Experience cards stack normally</td></tr>
-<tr><td>20</td><td>PDF uses .p-* classes</td><td>Print → PDF renders correctly</td></tr>
+<tr><td>20</td><td>PDF uses .p-* classes</td><td>Inspect HTML — only .p-* class names in PDF section</td></tr>
+<tr><td>21</td><td>PDF download — no print dialog</td><td>Click "Download CV" → file saves directly as CV_PraphanIamsam-ang.pdf</td></tr>
+<tr><td>22</td><td>Phone2 in PDF if populated</td><td>If person.phone2 non-empty → appears in PDF header contact row</td></tr>
 </table>
 </div>
 

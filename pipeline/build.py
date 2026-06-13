@@ -610,7 +610,8 @@ CSS = r"""*{box-sizing:border-box;margin:0;padding:0;}
   --mint:#70FC8E;--border:rgba(24,29,37,0.07);--bm:rgba(24,29,37,0.11);
   --mono:"Geist Mono",monospace;
 }
-.shell{background:var(--bg);display:grid;grid-template-columns:300px 1fr;min-height:100vh;font-family:var(--mono);}
+.shell{background:linear-gradient(to right,var(--cobalt) 300px,var(--bg) 300px);display:grid;grid-template-columns:300px 1fr;min-height:100vh;font-family:var(--mono);}
+/* background gradient extends Cobalt colour full page height — prevents sidebar bg stopping at viewport height */
 .sb{background:var(--cobalt);padding:1.5rem 1.25rem;display:flex;flex-direction:column;gap:1.2rem;position:sticky;top:0;height:100dvh;overflow-y:auto;scrollbar-width:none;}
 .sb::-webkit-scrollbar{display:none;}
 .sb svg{flex-shrink:0;}
@@ -1183,7 +1184,11 @@ def build_pdf_html(d, qr_b64):
     email_str = esc(p.get("email", ""))
     reloc_html = f'<div class="p-reloc">Open to relocation &rarr; {esc(p.get("relocation",""))}</div>' if p.get("relocation") and p.get("country") != "Australia" else ""
 
-    ci_items = [location_str, phone_str, email_str]
+    phone2_str = esc(p.get("phone2", ""))
+    ci_items = [location_str, phone_str]
+    if phone2_str:
+        ci_items.append(phone2_str)
+    ci_items.append(email_str)
     ci_html = "".join(f'<span class="p-ci">{v}</span>' for v in ci_items if v)
 
     skills_html = "".join(f'<span class="p-sk">{esc(sk)}</span>' for sk in d.get("all_skills", []))
@@ -1504,11 +1509,20 @@ function collapseSection(sectionId,btn){{
   btn.textContent=isCollapsing?'▸ Expand all':'▾ Collapse all';
 }}
 function showPDF(){{
-  document.querySelector('.shell').style.display='none';
-  document.getElementById('pdf-page').style.display='block';
-  window.print();
-  document.querySelector('.shell').style.display='';
-  document.getElementById('pdf-page').style.display='none';
+  const el=document.getElementById('pdf-page');
+  el.style.display='block';
+  const opt={{
+    margin:0,
+    filename:'CV_PraphanIamsam-ang.pdf',
+    image:{{type:'jpeg',quality:0.98}},
+    html2canvas:{{scale:2,useCORS:true,letterRendering:true}},
+    jsPDF:{{unit:'mm',format:'a4',orientation:'portrait'}}
+  }};
+  document.fonts.ready.then(()=>{{
+    html2pdf().set(opt).from(el).save().then(()=>{{
+      el.style.display='none';
+    }});
+  }});
 }}"""
 
     today_str = TODAY.strftime("%d %B %Y").lstrip("0")
@@ -1520,6 +1534,7 @@ function showPDF(){{
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{name} — CV</title>
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <style>{CSS}</style>
 </head>
 <body>

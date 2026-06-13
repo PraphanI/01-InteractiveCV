@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Praphan Iamsam-ang — CV</title>
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <style>*{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --bg:#F2F3F6;--card:#fff;--obs:#181D25;--mist:#606E80;
@@ -12,7 +13,8 @@
   --mint:#70FC8E;--border:rgba(24,29,37,0.07);--bm:rgba(24,29,37,0.11);
   --mono:"Geist Mono",monospace;
 }
-.shell{background:var(--bg);display:grid;grid-template-columns:300px 1fr;min-height:100vh;font-family:var(--mono);}
+.shell{background:linear-gradient(to right,var(--cobalt) 300px,var(--bg) 300px);display:grid;grid-template-columns:300px 1fr;min-height:100vh;font-family:var(--mono);}
+/* background gradient extends Cobalt colour full page height — prevents sidebar bg stopping at viewport height */
 .sb{background:var(--cobalt);padding:1.5rem 1.25rem;display:flex;flex-direction:column;gap:1.2rem;position:sticky;top:0;height:100dvh;overflow-y:auto;scrollbar-width:none;}
 .sb::-webkit-scrollbar{display:none;}
 .sb svg{flex-shrink:0;}
@@ -451,11 +453,20 @@ function collapseSection(sectionId,btn){
   btn.textContent=isCollapsing?'▸ Expand all':'▾ Collapse all';
 }
 function showPDF(){
-  document.querySelector('.shell').style.display='none';
-  document.getElementById('pdf-page').style.display='block';
-  window.print();
-  document.querySelector('.shell').style.display='';
-  document.getElementById('pdf-page').style.display='none';
+  const el=document.getElementById('pdf-page');
+  el.style.display='block';
+  const opt={
+    margin:0,
+    filename:'CV_PraphanIamsam-ang.pdf',
+    image:{type:'jpeg',quality:0.98},
+    html2canvas:{scale:2,useCORS:true,letterRendering:true},
+    jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}
+  };
+  document.fonts.ready.then(()=>{
+    html2pdf().set(opt).from(el).save().then(()=>{
+      el.style.display='none';
+    });
+  });
 }</script>
 </body>
 </html>
