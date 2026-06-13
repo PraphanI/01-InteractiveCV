@@ -97,12 +97,7 @@ def make_qr_b64():
 def get_gc():
     sa_json = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON")
     if sa_json:
-        import tempfile
-        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
-            f.write(sa_json)
-            tmp = f.name
-        creds = Credentials.from_service_account_file(tmp, scopes=SCOPES)
-        os.unlink(tmp)
+        creds = Credentials.from_service_account_info(json.loads(sa_json), scopes=SCOPES)
     else:
         sa_file = Path(__file__).parent / "service_account.json"
         creds = Credentials.from_service_account_file(str(sa_file), scopes=SCOPES)

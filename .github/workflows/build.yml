@@ -20,13 +20,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r pipeline/requirements.txt
 
-      - name: Write service account key
-        run: echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}' > pipeline/service_account.json
-
       - name: Run pipeline
         env:
           GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
-          GOOGLE_SERVICE_ACCOUNT_FILE: pipeline/service_account.json
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
         run: python pipeline/build.py
 
       - name: Commit updated data
