@@ -373,7 +373,7 @@ renderAll(CV_DATA);
 .treemap-wrap{flex:3;min-width:0;display:flex;flex-direction:column;}
 .treemap-inner{background:#fff;flex:1;display:flex;flex-direction:column;gap:3px;overflow:hidden;}
 .tm-row{display:flex;gap:3px;flex:1;}
-.tm-cell{border-radius:0;padding:10px 12px;overflow:hidden;display:flex;flex-direction:column;min-width:0;background:#EEF2FF;transition:filter 0.15s;}
+.tm-cell{border-radius:0;padding:10px 12px;overflow:hidden;display:flex;flex-direction:column;min-width:0;background:#EEF2FF;transition:filter 0.15s;height:100%;}
 .tm-cell:hover{filter:brightness(0.96);}
 .tm-top{display:flex;flex-direction:column;flex:1;}
 .tm-name{font-size:11px;font-weight:700;color:var(--cobalt);line-height:1.3;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -697,9 +697,12 @@ renderAll(CV_DATA);
 
 <div class="sub">PDF page breaks</div>
 <p>To prevent html2pdf.js from splitting cards across pages, these CSS rules must be applied to all PDF block elements:</p>
-<pre><code>.p-ei, .p-ei:last-child, .p-edui, .p-sec { break-inside:avoid; page-break-inside:avoid; }
+<pre><code>.p-edui { break-inside:avoid; page-break-inside:avoid; }
 .p-tlist li { break-inside:avoid; page-break-inside:avoid; }
-.p-tname { break-after:avoid; page-break-after:avoid; }</code></pre>
+.p-tname { break-after:avoid; page-break-after:avoid; }
+.p-st { break-after:avoid; page-break-after:avoid; }     /* keeps section title with first card */
+.p-ecompany { break-after:avoid; page-break-after:avoid; } /* keeps company name with task list */
+/* Do NOT apply break-inside:avoid to .p-sec or .p-ei — sections/roles are too long and cause massive blank gaps */</code></pre>
 
 <div class="sub">PDF Layout (top to bottom)</div>
 <ol>

@@ -825,9 +825,11 @@ CSS = r"""*{box-sizing:border-box;margin:0;padding:0;}
 .p-foot{margin-top:20px;padding-top:10px;border-top:0.5px solid rgba(24,29,37,0.1);display:flex;justify-content:space-between;}
 .p-fn{font-family:var(--mono);font-size:9px;color:var(--mist);}
 .p-fd{font-size:9px;color:rgba(24,29,37,0.25);}
-.p-ei,.p-ei:last-child,.p-edui,.p-sec{break-inside:avoid;page-break-inside:avoid;}
+.p-edui{break-inside:avoid;page-break-inside:avoid;}
 .p-tlist li{break-inside:avoid;page-break-inside:avoid;}
 .p-tname{break-after:avoid;page-break-after:avoid;}
+.p-st{break-after:avoid;page-break-after:avoid;}
+.p-ecompany{break-after:avoid;page-break-after:avoid;}
 .sb-motto{font-size:11px;color:var(--cm);line-height:1.6;font-style:italic;margin-top:12px;margin-bottom:25px;opacity:0.85;}
 .sb-motto-quote{color:var(--mint);font-style:normal;font-weight:700;}"""
 
