@@ -1,0 +1,843 @@
+{
+  "person": {
+    "first_name": "Praphan",
+    "last_name": "Iamsam-ang",
+    "full_name": "Praphan Iamsam-ang",
+    "initials": "PI",
+    "email": "Praphan.ig@gmail.com",
+    "phone": "+64225948612",
+    "phone2": "",
+    "linkedin": "https://www.linkedin.com/in/praphan-iamsam-ang-4963b941",
+    "github": "https://praphani.github.io/interactive-CV",
+    "motto": "If I can't simplify and visualise my own data, I already fail as a data analyst",
+    "career_summary_lede": "Customer Data Analyst with 15+ years\u2019 experience across telecoms, health insurance, and consulting.",
+    "career_summary_body": "Expert in SQL, Snowflake, Python, Power BI, Tableau, and Google Analytics, with hands-on AI augmentation skills including Claude Code, OpenAI Codex, prompt engineering, and agentic workflows. Proven in translating customer and digital analytics into measurable business outcomes.",
+    "home_city": "Auckland",
+    "home_country": "New Zealand",
+    "country": "New Zealand",
+    "relocation": ""
+  },
+  "stats": {
+    "total_exp": 18,
+    "industries": 4,
+    "analytics_years": 15,
+    "consulting_years": 7
+  },
+  "key_skills": [
+    "SQL",
+    "Snowflake",
+    "Python",
+    "ETL/EDW",
+    "Power BI",
+    "DAX",
+    "Tableau",
+    "Claude Code",
+    "Snowflake Cortex",
+    "Data Modelling",
+    "Stakeholder Management",
+    "Project Management"
+  ],
+  "radar_axes": [
+    {
+      "axis": "Data & Analytics",
+      "score": 40
+    },
+    {
+      "axis": "Visualisation",
+      "score": 22
+    },
+    {
+      "axis": "AI/ML/Coding",
+      "score": 9
+    },
+    {
+      "axis": "CX",
+      "score": 9
+    },
+    {
+      "axis": "CRM",
+      "score": 2
+    },
+    {
+      "axis": "Team/Project Mgmt",
+      "score": 30
+    }
+  ],
+  "radar_max": 40,
+  "treemap_top5": [
+    {
+      "name": "SQL",
+      "tasks": 12
+    },
+    {
+      "name": "Snowflake",
+      "tasks": 11
+    },
+    {
+      "name": "Data Modelling",
+      "tasks": 7
+    },
+    {
+      "name": "Power BI",
+      "tasks": 6
+    },
+    {
+      "name": "DAX",
+      "tasks": 5
+    }
+  ],
+  "experience": [
+    {
+      "o_id": "O001",
+      "company": "One New Zealand",
+      "industry": "Telecommunications",
+      "locations": [
+        "Auckland"
+      ],
+      "is_current": true,
+      "total_tenure_years": 3,
+      "total_tenure_months": 5,
+      "total_tenure_str": "3yr 5mo",
+      "date_from": "Jan 2023",
+      "date_to": "Present",
+      "roles": [
+        {
+          "w_id": "W001",
+          "title": "Customer Data Analyst",
+          "is_current": true,
+          "tenure_years": 3,
+          "tenure_months": 5,
+          "tenure_str": "3yr 5mo",
+          "date_from": "Jan 2023",
+          "date_to": "Present",
+          "skills": [
+            "A/B Testing",
+            "Alteryx",
+            "Claude Code",
+            "DAX",
+            "Data Modelling",
+            "ETL/EDW",
+            "Excel",
+            "Google Analytics",
+            "Looker Studio",
+            "Medallia",
+            "NLP / Sentiment Analysis",
+            "OpenAI Codex",
+            "Plotly",
+            "Power BI",
+            "Project Management",
+            "Python",
+            "Qualtrics",
+            "SQL",
+            "Salesforce",
+            "Snowflake",
+            "Snowflake Cortex",
+            "Stakeholder Management"
+          ],
+          "tasks": [
+            {
+              "t_id": "T001",
+              "sequence": 1,
+              "name": "Embedded AI coding tools analytics",
+              "description": "Embedded AI coding tools \u2014 including OpenAI Codex, Snowflake Cortex, and Claude Code \u2014 into day-to-day analytical workflows; leveraged Snowflake Cortex specifically for data discovery and rapid PoC development, significantly reducing the time needed to assess data feasibility and validate analytical approaches before full delivery.",
+              "challenge": "Speed of insight delivery",
+              "input": "Stakeholder requirements",
+              "output": "Power BI report or actionable insights",
+              "outcome": "Significantly reduced the time required to assess data feasibility and validate analytical approaches prior to full delivery.",
+              "skills": [
+                "Claude Code",
+                "DAX",
+                "OpenAI Codex",
+                "Power BI",
+                "Project Management",
+                "SQL",
+                "Snowflake",
+                "Snowflake Cortex",
+                "Stakeholder Management"
+              ]
+            },
+            {
+              "t_id": "T002",
+              "sequence": 2,
+              "name": "Whitespace opportunities analysis",
+              "description": "Identified whitespace opportunities for new sales and cross-sell by blending public and internal data sources \u2014 engineering a snapshot table sourced from the New Zealand Companies Register using advanced SQL scripting, CTEs, and data transformation logic, feeding into a comprehensive Power BI dashboard built with DAX and a structured data model, enabling stakeholders to track growth, market penetration, and untapped opportunities across dimensions including region, industry, and company size.",
+              "challenge": "Upsell & Cross-sell to generate more revenue",
+              "input": "Flat files, and CRM data on Snowflake",
+              "output": "Automated Power BI dashboard",
+              "outcome": "Power BI Dashboard that provides insights on market condition and opportunities",
+              "skills": [
+                "Claude Code",
+                "DAX",
+                "ETL/EDW",
+                "Power BI",
+                "Project Management",
+                "SQL",
+                "Snowflake",
+                "Snowflake Cortex",
+                "Stakeholder Management"
+              ]
+            },
+            {
+              "t_id": "T003",
+              "sequence": 3,
+              "name": "Customer reachability and contact quality KPIs",
+              "description": "Uncovered customer reachability and communication quality gaps within the CRM by analysing Salesforce data through advanced SQL scripting and data modelling \u2014 flagging business accounts without contactable contacts and accounts missing a primary contact or key decision-maker. Insights were structured into a governed data model and surfaced through an interactive Power BI dashboard, enabling marketing and servicing teams to act on data quality issues \u2014 ultimately driving a major revamp of onboarding processes and data entry standards.",
+              "challenge": "Effectiveness of marketing and servicing communications",
+              "input": "Salesforce data, Snowflake",
+              "output": "Automated Power BI dashboard with Customer Reachability and Contact Quality KPIs",
+              "outcome": "Enhanced customer communication metrics, directly driving incremental sales conversion rates.",
+              "skills": [
+                "DAX",
+                "Data Modelling",
+                "Power BI",
+                "Project Management",
+                "SQL",
+                "Salesforce",
+                "Snowflake",
+                "Snowflake Cortex",
+                "Stakeholder Management"
+              ]
+            },
+            {
+              "t_id": "T004",
+              "sequence": 4,
+              "name": "A/B testing with retention curve",
+              "description": "Developed retention curves by discount band and designed A/B tests to validate offering strategies, enabling data-driven optimisation that balanced churn reduction with margin protection.",
+              "challenge": "High post-campaign churn resulting from customers exiting immediately following promotional discount expirations.",
+              "input": "Churn data, discount amounts by service",
+              "output": "Retention curves with A/B testing results",
+              "outcome": "Optimized, margin-protected campaigns that improved long-term customer retention and lifetime value (LTV).",
+              "skills": [
+                "A/B Testing",
+                "Excel",
+                "Plotly",
+                "Project Management",
+                "Python",
+                "SQL",
+                "Snowflake",
+                "Stakeholder Management"
+              ]
+            },
+            {
+              "t_id": "T005",
+              "sequence": 5,
+              "name": "NPS driver impact analysis",
+              "description": "Modelled NPS driver impact to prioritise improvement initiatives, directly linking customer feedback to business outcomes.",
+              "challenge": "Low NPS without understanding the causes",
+              "input": "NPS survey data (CSV and Snowflake)",
+              "output": "Correlation values for each driver",
+              "outcome": "Insights on linkage between drivers and NPS",
+              "skills": [
+                "Excel",
+                "Medallia",
+                "Project Management",
+                "Python",
+                "Qualtrics",
+                "SQL",
+                "Snowflake",
+                "Stakeholder Management"
+              ]
+            },
+            {
+              "t_id": "T006",
+              "sequence": 6,
+              "name": "Continuous VoC insight programme",
+              "description": "Delivered continuous VoC insight programmes, tracking member sentiment across journey stages and surfacing actionable findings for cross-functional stakeholders.",
+              "challenge": "Superficial visibility into customer sentiment without a unified, omni-channel view of customer journey friction points.",
+              "input": "NPS survey data (CSV and Snowflake)",
+              "output": "Power BI dashboard to show topics from the topic modelling and its movement",
+              "outcome": "Delivered cross-functional clarity on systemic customer pain points, enabling targeted operational interventions.",
+              "skills": [
+                "Medallia",
+                "NLP / Sentiment Analysis",
+                "Plotly",
+                "Project Management",
+                "Python",
+                "Stakeholder Management"
+              ]
+            },
+            {
+              "t_id": "T007",
+              "sequence": 7,
+              "name": "Nationwide 3G network shutdown",
+              "description": "Supported the nationwide 3G network shutdown: analysed customer usage and device data to design targeted communication strategies and proactive transition pathways.",
+              "challenge": "Customers need to be informed about the shutdown and understand their options",
+              "input": "Network and customer device data on Snowflake",
+              "output": "Excel with customer segmentation and its suggested handling strategies based on device capability (4G/5G capable)",
+              "outcome": "Achieved zero customer complaints during the nationwide 3G network shutdown phase.",
+              "skills": [
+                "Alteryx",
+                "Excel",
+                "Project Management",
+                "SQL",
+                "Salesforce",
+                "Snowflake",
+                "Stakeholder Management"
+              ]
+            },
+            {
+              "t_id": "T008",
+              "sequence": 8,
+              "name": "Business lead pipeline management",
+              "description": "Managed and maintained a business leads pipeline from digital channels, surfacing and tracking prospects\nthrough a Looker Studio dashboard for stakeholder visibility.",
+              "challenge": "Fragmented lead acquisition data that was difficult for stakeholders to synthesize and act upon efficiently.",
+              "input": "Google Analytics, Toll-free inbound calls, Request for information form submissions",
+              "output": "A centralized dashboard visualizing cross-channel leads, providing stakeholders with clear visibility into acquisition opportunities.",
+              "outcome": "Visualized dashboard on leads from multiple channels to understand the leads and opportunities",
+              "skills": [
+                "DAX",
+                "Google Analytics",
+                "Looker Studio",
+                "Power BI",
+                "Project Management",
+                "SQL",
+                "Snowflake",
+                "Stakeholder Management"
+              ]
+            },
+            {
+              "t_id": "T009",
+              "sequence": 9,
+              "name": "Sentiment analysis",
+              "description": "Built and maintained Power BI dashboards; authored Python scripts for sentiment analysis and topic\r\nmodelling on open-text customer feedback.",
+              "challenge": "No deep dive analysis on verbatim of the NPS campaign",
+              "input": "NPS survey data",
+              "output": "Topics and the number of mentions",
+              "outcome": "The insights provided empirical proof for multiple hypotheses.",
+              "skills": [
+                "DAX",
+                "NLP / Sentiment Analysis",
+                "Power BI",
+                "Project Management",
+                "Python",
+                "Stakeholder Management"
+              ]
+            }
+          ]
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "o_id": "O002",
+      "company": "nib",
+      "industry": "Insurance",
+      "locations": [
+        "Auckland"
+      ],
+      "is_current": false,
+      "total_tenure_years": 4,
+      "total_tenure_months": 5,
+      "total_tenure_str": "4yr 5mo",
+      "date_from": "Aug 2018",
+      "date_to": "Jan 2023",
+      "roles": [
+        {
+          "w_id": "W002",
+          "title": "Customer Experience Analyst",
+          "is_current": false,
+          "tenure_years": 4,
+          "tenure_months": 5,
+          "tenure_str": "4yr 5mo",
+          "date_from": "Aug 2018",
+          "date_to": "Jan 2023",
+          "skills": [
+            "Customer Journey Mapping",
+            "Data Modelling",
+            "Excel",
+            "InMoment",
+            "NLP / Sentiment Analysis",
+            "SQL",
+            "Snowflake",
+            "Stakeholder Management",
+            "Tableau"
+          ],
+          "tasks": [
+            {
+              "t_id": "T010",
+              "sequence": 1,
+              "name": "SME for data, analytics, and customer experience design",
+              "description": "Served as subject matter expert for data, analytics, and customer experience design across nib NZ.",
+              "challenge": "Fragmented information between CX and operational metrics",
+              "input": "Operational data and NPS survey data",
+              "output": "Tableau dashboards and ad-hoc analysis",
+              "outcome": "Single source of truth with actionable insights",
+              "skills": [
+                "Customer Journey Mapping",
+                "InMoment",
+                "SQL",
+                "Snowflake",
+                "Stakeholder Management",
+                "Tableau"
+              ]
+            },
+            {
+              "t_id": "T011",
+              "sequence": 2,
+              "name": "Designed and maintained customer and internal survey programmes",
+              "description": "Designed and maintained customer and internal survey programmes (Qualtrics / Medallia); built topic modelling to track friction themes over time.",
+              "challenge": "NPS is one of the company's primary KPIs and it's extremely difficult to explain the NPS movement",
+              "input": "Operational data and NPS survey data",
+              "output": "Monthly Tableau / PPT report",
+              "outcome": "Analysis on what are the main driver(s) for the change of NPS and what would be the actions to address it",
+              "skills": [
+                "InMoment",
+                "SQL",
+                "Snowflake"
+              ]
+            },
+            {
+              "t_id": "T012",
+              "sequence": 3,
+              "name": "Quantified financial impact of detractors",
+              "description": "Quantified financial impact of detractor cohorts, building the business case for CX investment; provided data-driven\ninputs for mobile app feature prioritisation.",
+              "challenge": "Unclear financial justification for CX initiatives, delaying development priority.",
+              "input": "Churn data, retention metrics, operational costs, NPS data",
+              "output": "Financial impact models and business case documentation",
+              "outcome": "Secured leadership buy-in for CX initiatives",
+              "skills": [
+                "Data Modelling",
+                "Excel",
+                "InMoment",
+                "Stakeholder Management",
+                "Tableau"
+              ]
+            },
+            {
+              "t_id": "T013",
+              "sequence": 4,
+              "name": "Initiated and built nib NZ's first Tableau dashboard suite",
+              "description": "Initiated and built nib NZ's first Tableau dashboard suite, establishing the foundation for self-serve analytics\nacross the business.",
+              "challenge": "High dependency on analytics team for ad-hoc queries, delaying insights",
+              "input": "Siloed operational systems and business unit reporting requirements",
+              "output": "Automated, corporate-wide self-service Tableau dashboard suite",
+              "outcome": "Established a decentralized, data-driven operational culture",
+              "skills": [
+                "Data Modelling",
+                "SQL",
+                "Snowflake",
+                "Tableau"
+              ]
+            },
+            {
+              "t_id": "T014",
+              "sequence": 5,
+              "name": "Mapped and redesigned the customer onboarding journey",
+              "description": "Mapped and redesigned the customer onboarding journey, reducing friction points based on member\nfeedback analysis.",
+              "challenge": "Process friction causing early-stage drop-offs and membership churn",
+              "input": "Member feedback verbatims and onboarding funnel performance data",
+              "output": "Customer journey maps and optimized onboarding process flows",
+              "outcome": "Streamlined member onboarding, reducing friction points",
+              "skills": [
+                "Customer Journey Mapping",
+                "NLP / Sentiment Analysis",
+                "SQL",
+                "Snowflake",
+                "Tableau"
+              ]
+            }
+          ]
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "o_id": "O003",
+      "company": "King Power",
+      "industry": "Retail",
+      "locations": [
+        "Bangkok"
+      ],
+      "is_current": false,
+      "total_tenure_years": 2,
+      "total_tenure_months": 4,
+      "total_tenure_str": "2yr 4mo",
+      "date_from": "Jan 2016",
+      "date_to": "May 2018",
+      "roles": [
+        {
+          "w_id": "W003",
+          "title": "Senior Specialist",
+          "is_current": false,
+          "tenure_years": 2,
+          "tenure_months": 4,
+          "tenure_str": "2yr 4mo",
+          "date_from": "Jan 2016",
+          "date_to": "May 2018",
+          "skills": [
+            "Customer Journey Mapping",
+            "Project Management",
+            "Stakeholder Management"
+          ],
+          "tasks": [
+            {
+              "t_id": "T015",
+              "sequence": 1,
+              "name": "Customer journey mapping across retail stores.",
+              "description": "Led human-centric service redesign and customer journey mapping across retail stores.",
+              "challenge": "Fragmented brick-and-mortar experiences causing operational gaps",
+              "input": "Retail foot-traffic patterns, POS logs, and intercept surveys",
+              "output": "Physical environment journey maps and service blueprints",
+              "outcome": "Restructured physical layouts to align with customer behaviors",
+              "skills": [
+                "Customer Journey Mapping",
+                "Stakeholder Management"
+              ]
+            },
+            {
+              "t_id": "T016",
+              "sequence": 2,
+              "name": "Design Thinking to support digital business transformation",
+              "description": "Analysed digital business transformation gaps and crafted strategies using Design Thinking methodology;\r\nmanaged agile delivery throughout the transformation programme.",
+              "challenge": "Unclear digital transformation scope and risk of agile execution creep",
+              "input": "Legacy process architecture and cross-functional backlogs",
+              "output": "Strategic transformation roadmaps and prioritized sprint pipelines",
+              "outcome": "Mitigated program risk and ensured steady delivery of features",
+              "skills": [
+                "Project Management",
+                "Stakeholder Management"
+              ]
+            }
+          ]
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "o_id": "O004",
+      "company": "Deloitte",
+      "industry": "Consulting",
+      "locations": [
+        "Bangkok",
+        "Manila"
+      ],
+      "is_current": false,
+      "total_tenure_years": 2,
+      "total_tenure_months": 8,
+      "total_tenure_str": "2yr 8mo",
+      "date_from": "Apr 2013",
+      "date_to": "Dec 2015",
+      "roles": [
+        {
+          "w_id": "W004",
+          "title": "Senior Consultant",
+          "is_current": false,
+          "tenure_years": 2,
+          "tenure_months": 8,
+          "tenure_str": "2yr 8mo",
+          "date_from": "Apr 2013",
+          "date_to": "Dec 2015",
+          "skills": [
+            "Data Modelling",
+            "Power BI",
+            "Project Management",
+            "Stakeholder Management"
+          ],
+          "tasks": [
+            {
+              "t_id": "T017",
+              "sequence": 1,
+              "name": "Business Continuity Management Systems (ISO 22301)",
+              "description": "Contributed to the Deloitte innovation team on Design Thinking pilot projects; performed gap analyses for\nclients' Business Continuity Management Systems (ISO 22301).",
+              "challenge": "Vulnerability to business disruption and lack of regulatory resilience",
+              "input": "Infrastructure dependencies, operational risk logs, ISO checklists",
+              "output": "Rigorous gap analysis reports and risk mitigation frameworks",
+              "outcome": "Prepared critical business infrastructure for ISO 22301 compliance",
+              "skills": [
+                "Project Management",
+                "Stakeholder Management"
+              ]
+            },
+            {
+              "t_id": "T018",
+              "sequence": 2,
+              "name": "Analysed business processes and supply chains to identify improvement opportunities",
+              "description": "Analysed business processes and supply chains to identify improvement opportunities; developed Power BI\nprocess visualisations for client reporting.",
+              "challenge": "Sub-optimal supply chain visibility causing overhead and shipping delays",
+              "input": "Supply chain transaction logs and procurement fulfillment timelines",
+              "output": "Interactive Power BI process visualization dashboards",
+              "outcome": "Enabled rapid identification and optimization of supply chain bottlenecks",
+              "skills": [
+                "Data Modelling",
+                "Power BI",
+                "Stakeholder Management"
+              ]
+            }
+          ]
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "o_id": "O005",
+      "company": "Accenture",
+      "industry": "Consulting",
+      "locations": [
+        "Bangkok",
+        "Kuala Lumpur"
+      ],
+      "is_current": false,
+      "total_tenure_years": 5,
+      "total_tenure_months": 3,
+      "total_tenure_str": "5yr 3mo",
+      "date_from": "Feb 2005",
+      "date_to": "Apr 2013",
+      "roles": [
+        {
+          "w_id": "W005",
+          "title": "Business Consultant",
+          "is_current": false,
+          "tenure_years": 3,
+          "tenure_months": 2,
+          "tenure_str": "3yr 2mo",
+          "date_from": "Feb 2010",
+          "date_to": "Apr 2013",
+          "skills": [
+            "Data Modelling",
+            "ETL/EDW",
+            "Project Management",
+            "Stakeholder Management"
+          ],
+          "tasks": [
+            {
+              "t_id": "T019",
+              "sequence": 1,
+              "name": "Implemented a large-scale Enterprise Data Warehouse (EDW)",
+              "description": "Implemented a large-scale Enterprise Data Warehouse (EDW) for one of Thailand's largest telecoms\ncompanies.",
+              "challenge": "Fragmented legacy databases preventing unified corporate reporting",
+              "input": "Sourced transactional databases and billing records",
+              "output": "Scalable, high-volume production EDW architecture",
+              "outcome": "Modernized data foundation, processing billions of daily records",
+              "skills": [
+                "Data Modelling",
+                "ETL/EDW",
+                "Project Management"
+              ]
+            },
+            {
+              "t_id": "T020",
+              "sequence": 2,
+              "name": "Delivered Business Continuity Planning (BCP) strategy",
+              "description": "Delivered Business Continuity Planning (BCP) strategy for Thailand's largest conglomerate",
+              "challenge": "Business exposure to disaster downtime",
+              "input": "Business dependency metrics and processes",
+              "output": "Corporate BCP manuals",
+              "outcome": "Standardized crisis protocols",
+              "skills": [
+                "Project Management",
+                "Stakeholder Management"
+              ]
+            },
+            {
+              "t_id": "T021",
+              "sequence": 3,
+              "name": "Custom software to maintain and track undeveloped oil reserves",
+              "description": "Developed custom software for an energy firm's undeveloped oil reserves system.",
+              "challenge": "Manual tracking of energy reserves",
+              "input": "Raw geological asset records",
+              "output": "A custom asset-tracking platform",
+              "outcome": "Digitized asset valuation data",
+              "skills": [
+                "Data Modelling",
+                "Project Management"
+              ]
+            }
+          ]
+        },
+        {
+          "w_id": "W006",
+          "title": "Senior Programmer",
+          "is_current": false,
+          "tenure_years": 2,
+          "tenure_months": 1,
+          "tenure_str": "2yr 1mo",
+          "date_from": "Feb 2005",
+          "date_to": "Mar 2007",
+          "skills": [
+            "Data Modelling",
+            "ETL/EDW",
+            "SQL"
+          ],
+          "tasks": [
+            {
+              "t_id": "T022",
+              "sequence": 1,
+              "name": "Developed ETL workflows for telecoms EDW",
+              "description": "Developed ETL workflows for telecoms EDW; built data mining solutions supporting customer segmentation\nstrategy.",
+              "challenge": "A crucial part of an EDW development to ensure data quality",
+              "input": "Raw data from various sources including flat files",
+              "output": "Optimized ETL pipelines and predictive data-mining models",
+              "outcome": "Automated data flows to fuel precise customer segmentation",
+              "skills": [
+                "Data Modelling",
+                "ETL/EDW",
+                "SQL"
+              ]
+            }
+          ]
+        }
+      ],
+      "transitions": [
+        {
+          "from_w_id": "W006",
+          "to_w_id": "W005",
+          "label": "Left for studies \u00b7 Rejoined"
+        }
+      ]
+    }
+  ],
+  "side_projects": [
+    {
+      "sp_id": "SP001",
+      "name": "Dynamic & Interactive CV",
+      "order": 1,
+      "description": "Dynamic data-driven interactive CV utilizing AI Tools",
+      "challenge": "How can I be a good data analyst if I can't visualize my own data?",
+      "built_with": "Claude Code with sub-agents, Google Sheets",
+      "output": "Automated Interactive HTML with a comprehensive data schema",
+      "completed_on": "2026",
+      "url": "https://praphani.github.io/interactive-CV",
+      "skills": [
+        "Claude Code",
+        "Data Modelling",
+        "Github Actions"
+      ]
+    },
+    {
+      "sp_id": "SP002",
+      "name": "NZ Business Dashboard",
+      "order": 2,
+      "description": "Upskilling a few new Tableau features",
+      "challenge": "Understanding NZ economy on the micro level can be challenging",
+      "built_with": "Python Pandas for data discovery, Alteryx for ETL, and Tableau Public for visualisation",
+      "output": "Public Tableau dashboard",
+      "completed_on": "2024",
+      "url": "https://public.tableau.com/app/profile/praphan.iamsam.ang/viz/NZBusinessin2024/NZBusinessin2024",
+      "skills": [
+        "Alteryx",
+        "Plotly",
+        "Python",
+        "Tableau"
+      ]
+    },
+    {
+      "sp_id": "SP003",
+      "name": "NZ Immigration Data",
+      "order": 3,
+      "description": "Proving a personal hypothesis with facts",
+      "challenge": "Investigating reports of declining visa applications and what caused it and how can we improve efficiency",
+      "built_with": "Alteryx for ETL, and Tableau Public for visualisation",
+      "output": "Public Tableau dashboard",
+      "completed_on": "2022",
+      "url": "https://public.tableau.com/app/profile/praphan.iamsam.ang/viz/NZImmigrationdatashowcase/NZImmigrationEfficiencyImprovementTarget",
+      "skills": [
+        "Alteryx",
+        "Tableau"
+      ]
+    },
+    {
+      "sp_id": "SP004",
+      "name": "NZ Combustion Emission",
+      "order": 4,
+      "description": "Another mythbuster side project",
+      "challenge": "Evaluating the widespread assumption that agricultural and manufacturing sectors are the primary contributors to greenhouse gas emissions.",
+      "built_with": "Python Panda for data discovery, Alteryx for ETL, and Tableau Public for visualisation",
+      "output": "Public Tableau dashboard",
+      "completed_on": "2022",
+      "url": "https://public.tableau.com/app/profile/praphan.iamsam.ang/viz/NZCombustionEmission2000-2022/NZCombustionDashboard",
+      "skills": [
+        "Alteryx",
+        "Plotly",
+        "Python",
+        "Tableau"
+      ]
+    },
+    {
+      "sp_id": "SP005",
+      "name": "Kickstarter",
+      "order": 5,
+      "description": "Military outpost 3D STLs project on KS",
+      "challenge": "How can I turn my hobby into additional income?",
+      "built_with": "Blender",
+      "output": "A successful Kickstarter campaign that generated over NZD $4,500 in revenue.",
+      "completed_on": "2026",
+      "url": "https://www.kickstarter.com/projects/1077604478/military-outpost-3d-printable-stl-files",
+      "skills": [
+        "Blender"
+      ]
+    }
+  ],
+  "sp_teaser": "Dynamic & Interactive CV, NZ Business Dashboard, NZ Immigration Data, and 2 more",
+  "education": [
+    {
+      "e_id": "E001",
+      "type": "Postgraduate",
+      "institute": "University of Sydney",
+      "degree": "Master of Commerce & Master of Logistics Management",
+      "skill": "",
+      "majors": [],
+      "city": "Sydney",
+      "country": "Australia",
+      "location": "Sydney, Australia",
+      "from_date": "Jul 2007",
+      "to_date": "Dec 2009",
+      "from_year": "2007",
+      "to_year": "2009",
+      "grad_year": "'09",
+      "display_order": 999
+    },
+    {
+      "e_id": "E002",
+      "type": "Undergraduate",
+      "institute": "Mahidol University International College",
+      "degree": "Bachelor of Business Administration",
+      "skill": "",
+      "majors": [],
+      "city": "Bangkok",
+      "country": "Thailand",
+      "location": "Bangkok, Thailand",
+      "from_date": "Jan 2000",
+      "to_date": "Dec 2004",
+      "from_year": "2000",
+      "to_year": "2004",
+      "grad_year": "'04",
+      "display_order": 999
+    },
+    {
+      "e_id": "E003",
+      "type": "Certificate",
+      "institute": "Google",
+      "degree": "Prompt Design in Vertex AI Skill",
+      "skill": "S029",
+      "majors": [],
+      "city": "",
+      "country": "",
+      "location": "",
+      "from_date": "Dec 2024",
+      "to_date": "",
+      "from_year": "2024",
+      "to_year": "",
+      "grad_year": "",
+      "display_order": 999
+    },
+    {
+      "e_id": "E004",
+      "type": "Certificate",
+      "institute": "Ideo",
+      "degree": "Foundations in Design Thinking",
+      "skill": "S026",
+      "majors": [],
+      "city": "",
+      "country": "",
+      "location": "",
+      "from_date": "Jun 2018",
+      "to_date": "",
+      "from_year": "2018",
+      "to_year": "",
+      "grad_year": "",
+      "display_order": 999
+    }
+  ],
+  "generated_date": "14 June 2026",
+  "qr_b64": "iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAIAAAAG+WgKAAAD+ElEQVR4nO3dS27VQBRAwQSxCU8Ysv/1MGTylhEWYAks6/THj6pxyIccdXRld/fn19fXB3S+hZ8LJEXPKkVMUsQkRUxSxCRFTFLEJEVMUsQkRez7lQ86fvz8WOf1+9c/v5/zx1Q/1xM/8zhXvmerFDFJEZMUMUkRkxQrJr5qWhk3K12ZAe/NStVnfl34H7s3ya79XZxZpYhJipikiEmKmKTYY+KrpoNxz7nGPQurJsdxs9vM38WZVYqYpIhJipikiEmKXSe+mao5sXoOWL13ekRvq65llSImKWKSIiYpYpIi9siJb7f57srHHBe+nyfOd2dWKWKSIiYpYpIiJil2nfhmTivjnoWN2/0309rJ0SpFTFLEJEVMUsQkxR4T39qJ5l2fJx7Ru6BrWaWISYqYpIhJipikiH2+xw3s1dRTnQL6eov3M++xShGTFDFJEZMUMUmxYuKbOfXMvMmueoI27ozN17DzXsb9Tq1SxCRFTFLEJEVMUuzxjG/t+f/VtFLd/XfFa+JXXztrW6WISYqYpIhJipikeM7JLecJYuY96TPd+9mvuPc/NnMmPbNKEZMUMUkRkxQxSbHrPr7938Zc++TrWLofcOZOQ6sUMUkRkxQxSRGTFM+Z+Gbukpt5c/rMGXDt7GYfH1vwh4+YpIhJipik+P/O6px5dsoV9vH9nVWKmKSISYqYpIhJil338c3cW/fE80zWnu5y5Tu0j49N+cNHTFLEJEVMUrzX7Qxr7xxfux/wtdk7nBWrFDFJEZMUMUkRkxRPPqvziiszztqbDtaeUXNsfz+gVYqYpIhJipikiEmKFRPfzLNTxs2AM58nHsPuoaiM++pWKWKSIiYpYpIiJilWTHwzd5Pt9sbmzKdsr2G77Wb+LqxSxCRFTFLEJEVMUjznrM7d3n5c+67jMfH+iLWsUsQkRUxSxCRFTFLscXLL2cznd1e++sz3KsedAjrOuFnSKkVMUsQkRUxSxCTF/3cf39na53drdyxesfZ5olWKmKSISYqYpIhJil338Y0z8zaEav/dEZ0bs/bnuscqRUxSxCRFTFLEJMUetzOMmyDG3ZhQfa3qDdJj2LPCe7zVyab84SMmKWKSIiYpdr2Pb7f5Zdwbm+PemRz3dHXmeS9WKWKSIiYpYpIiJil2nfjY+R75meedWqWISQpJsTerFDFJEXvkxDduMqqefL2G7Qe8969mnqRqlSImKWKSIiYpYpJi14lv5vuZ++/ju6d67lb9q3usUsQkRUxSxCRFTFLsMfGtPb2z2gFX7a1bex/fsfSm+zOrFDFJEZMUMUkRkxSxR97Hx86sUsQkRUxSxCRFTFLEJEVMUsQkRUxSxCRFTFJ8tP4AgUsyLA0cpj0AAAAASUVORK5CYII="
+}
